@@ -158,11 +158,6 @@ The robot body is cut from 3 mm MDF (the 4.5 mm stock was reserved for the harve
     <td align="center"><img src="docs/images/arm-and-gripper.jpg" width="200"><br><sub>2-DOF arm + gripper</sub></td>
     <td align="center"><img src="docs/images/flytrap-gripper-photo.jpg" width="200"><br><sub>"Flytrap" gripper</sub></td>
   </tr>
-  <tr>
-    <td align="center"><img src="docs/images/harvest-gripper.png" width="200"><br><sub>Gripper CAD</sub></td>
-    <td align="center"><img src="docs/images/arm-base.png" width="200"><br><sub>Arm base · 500:1 DC motor</sub></td>
-    <td align="center"><img src="docs/images/wheel-rims.png" width="200"><br><sub>Wheel rims</sub></td>
-  </tr>
 </table>
 
 - **Wheels** — five designs were tested (delta wheel, tri-spoke, rubber-tube gear, chain-linked PVC pipes, and finally two large sandpaper-covered wheels with rear casters) to balance ramp climbing against quick, stable turning.
