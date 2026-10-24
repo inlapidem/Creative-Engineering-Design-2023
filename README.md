@@ -34,7 +34,7 @@ Parts were designed in Fusion 360, laser-cut from 3 mm / 4.5 mm MDF and 3D-print
 
 ## HW1 · Servo gripper
 
-Design a gripper driven by a single SG90 micro servo that picks up a 40 mm cube, a Ø45 mm cylinder and a Ø50 mm ball and holds each for three seconds. The final gripper (mk1) uses two **rotating comb-finger rollers** mounted in a laser-cut MDF frame: the servo turns the rollers through a gear pair so the fingers close on the object from both sides. An earlier geared-jaw concept (mk2) is kept in the CAD folder.
+Design a gripper driven by a single SG90 micro servo that picks up a 40 mm cube, a Ø45 mm cylinder and a Ø50 mm ball and holds each for three seconds. Two grippers were designed in parallel: **mk1**, with two rotating comb-finger rollers in a laser-cut MDF frame, and **mk2**, with geared jaws on linkage arms. mk1 was built and used: the servo turns the rollers through a gear pair so the fingers close on the object from both sides.
 
 <table>
   <tr>
@@ -43,7 +43,7 @@ Design a gripper driven by a single SG90 micro servo that picks up a 40 mm cube,
   </tr>
 </table>
 
-Files: [`hw1-gripper/`](hw1-gripper/) — final parts in [`cad/mk1/`](hw1-gripper/cad/mk1/) (frame, rollers, joints, plates), the earlier mk2 concept and laser-cutting drawings (PDF).
+Files: [`hw1-gripper/`](hw1-gripper/) — final parts in [`cad/mk1/`](hw1-gripper/cad/mk1/) (frame, rollers, joints, plates), the alternative mk2 design and laser-cutting drawings (PDF).
 
 ## HW2 · Line tracer
 
@@ -184,7 +184,7 @@ The full team report, with design alternatives, kinematic and force analysis and
 ```
 .
 ├── hw1-gripper/
-│   ├── cad/               # mk1, mk2 and the submitted gripper (.f3d)
+│   ├── cad/               # mk1 (built), mk2 (alternative design), CAD submission (.f3d)
 │   └── drawings/          # laser-cut layouts (PDF)
 ├── hw2-line-tracer/
 │   ├── cad/               # body v1–v3, wheel parts, cut layouts
