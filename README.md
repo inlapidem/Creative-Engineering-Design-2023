@@ -195,4 +195,10 @@ The full team report, with design alternatives, kinematic and force analysis and
 └── docs/                  # final report and README images
 ```
 
-`.f3d` files open in Autodesk Fusion 360. Course handouts, purchased-part models (servos, Arduino boards, sensors) and team photos are not included.
+`.f3d` files open in Autodesk Fusion 360. Course handouts and purchased-part models (servos, Arduino boards, sensors) are not included.
+
+---
+
+## ROBOCON 2023 recap
+
+▶ **[Watch the official recap of the 31st SNU CED ROBOCON (2023) on YouTube](https://www.youtube.com/watch?v=B18EgU-YTO8)**
