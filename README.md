@@ -38,9 +38,8 @@ Design a gripper driven by a single hobby servo that picks up a 40 mm cube, a Ø
 
 <table>
   <tr>
-    <td align="center"><img src="docs/images/hw1-gripper-mk2.png" width="200"><br><sub>mk2 · geared jaws</sub></td>
-    <td align="center"><img src="docs/images/hw1-gripper-mk2-new.png" width="200"><br><sub>mk2 · revised body</sub></td>
-    <td align="center"><img src="docs/images/hw1-gripper-mk1-layout.png" width="200"><br><sub>mk1 · laser-cut layout</sub></td>
+    <td align="center"><img src="docs/images/hw1-gripper-mk2.png" width="200"><br><sub>mk2 · geared jaws and linkage arms</sub></td>
+    <td align="center"><img src="docs/images/hw1-gripper-mk2-body.png" width="200"><br><sub>mk2 · gear train on the body</sub></td>
   </tr>
 </table>
 
@@ -52,7 +51,6 @@ An Arduino car with two geared DC motors and four IR line sensors. The firmware 
 
 <table>
   <tr>
-    <td align="center"><img src="docs/images/linetracer-v1.png" width="200"><br><sub>Body v1</sub></td>
     <td align="center"><img src="docs/images/linetracer-v2.png" width="200"><br><sub>Body v2</sub></td>
     <td align="center"><img src="docs/images/linetracer-v3.png" width="200"><br><sub>Body v3 (final)</sub></td>
   </tr>
@@ -64,17 +62,66 @@ Files: [`hw2-line-tracer/`](hw2-line-tracer/) — CAD, laser-cut layouts, drawin
 
 ## Robot project · Harvest and transport
 
-**Mission.** Fruit (balls) and a heavy "black sapphire" (~280 g) are scattered on the field. A remote-controlled **harvest robot** picks them up and sorts them into refrigerators and room-temperature storage, while an autonomous **transport robot** follows a line across the field. Fruit carried by the transport robot earns a bonus.
+### Game: ROBOCON "Tanghuru Factory"
+
+Two teams play on a shared field. Each team runs a **harvest robot** driven by an RC transmitter and an **autonomous transport robot** that follows a white line on a black floor. The goal is to collect fruit and sort it into the matching **baskets** (room temperature) or **fridges** to "make tanghulu".
+
+**Objects**
+
+| Object | Count | Description |
+|---|:---:|---|
+| Strawberry (red ball) | 5 | Ø70 mm PLA ball, 100 g |
+| Blueberry (blue ball) | 5 | Ø70 mm PLA ball, 100 g |
+| Black sapphire grape | 3 | 70 × Ø60 mm double cone with a metal core, 280 g — hard to grip and heavy |
+| Rock | 1 | 300 × 100 × 150 mm wooden obstacle in the middle of the field |
+
+**Scoring**
+
+| Delivery | Points |
+|---|:---:|
+| Strawberry / blueberry into the same-color basket | +1 |
+| Strawberry / blueberry into the same-color fridge (via the transport robot or directly) | +2 |
+| Black sapphire into any basket | +2 |
+| Black sapphire into any fridge (via the transport robot or directly) | +4 |
+| Fruit into a different-color basket or fridge | 0 |
+
+An object counts when its center of gravity is inside the score zone after everything stops moving. Ties are broken by black sapphires in a basket, then fruit in the correct fridge, then fruit in the correct basket.
+
+**Match flow** (3 min 30 s in total)
+
+1. **Cooperation mission (first 30 s).** The black sapphires sit in a basket on a "grape tree" between the two teams. Each team's harvest robot grips a cube tied to the tree by a string and pulls. The tree only lifts the basket if both teams pull evenly; if it tilts, the grapes fall off.
+2. **Harvest and transport (3 min).** Harvest robots may enter the harvesting zone after 30 s, or immediately if the cooperation succeeded. Black sapphires may be touched only from 1 min after entering. In the final contest, harvest robots may also cross the center line after 1 min and play against the opponent.
+3. **Finish.** Power is cut at the stop signal and the judges count the points.
+
+**Robot constraints**
+
+| | Harvest robot | Transport robot |
+|---|---|---|
+| Control | Manual, RC transmitter (8 channels) | Fully autonomous |
+| Controller | Arduino Mega | Arduino Uno R4 |
+| Actuators | 3 servos, 3 DC motors (GM25 1:171 ×2, 1:500 ×1) | 4 servos, 2 geared DC motors |
+| Sensors | — | 4 IR line sensors, 2 ultrasonic |
+| Size at start | Fits in a 300 mm cube | Fits in 200 × 200 × 400 mm |
+| Mass | ≤ 5.0 kg | ≤ 3.0 kg |
+
+- Robots are built only from the course kit: aluminum and PVC plates, 3 mm / 4.5 mm MDF, aluminum angles, chain gears and steel shafts, plus up to ₩10,000 of extra non-energy-storing material. Each 3D-printed part may weigh at most 60 g.
+- Energy may come only from the supplied batteries, from gravity, or from elastic parts the team made — which is why the transport robot uses gravity and a rubber band to unfold.
+- Penalties: −1 for late setup, a false start or a transport-robot reset; −2 for touching robots or objects, entering the harvesting zone early, or entering the opponent's transport zone. A team with 4 or more penalty points is disqualified.
+- Schedule: performance evaluations on 11/3 and 11/17 (no crossing the center line), then the ROBOCON tournament on 11/24.
+
+### Our strategy
+
+A line tracer is too slow to shuttle fruit back and forth reliably, and fridges are worth double the baskets. So instead of having the transport robot carry fruit, the team made it **drive once to the fridges and turn into a ramp**. The harvest robot drops fruit — including the 280 g black sapphires, too heavy for the transport robot to carry — at the top of the ramp, and gravity rolls it into the fridges.
 
 ### Transport robot — my part
 
-A line tracer is too slow to shuttle fruit back and forth reliably, so instead of making many trips the transport robot drives once to the refrigerators and **transforms into a rail bridge**. The harvest robot then drops fruit onto the rails and it rolls straight into the refrigerators — a "factory line" that also handles the heavy black sapphire without carrying it.
+The transport robot follows the line to the fridges and **transforms into a rail bridge** that spans from the baskets to the fridges. Fruit placed on the rails rolls straight into the fridges — a "factory line" that turns +1 basket deliveries into +2 fridge deliveries and handles the heavy black sapphire without carrying it.
 
 <table>
   <tr>
     <td align="center"><img src="docs/images/transport-final.png" width="200"><br><sub>Final transport robot</sub></td>
-    <td align="center"><img src="docs/images/transport-front-bridge.png" width="200"><br><sub>Front bridge section</sub></td>
     <td align="center"><img src="docs/images/transport-v15.png" width="200"><br><sub>Earlier version (v15)</sub></td>
+    <td align="center"><img src="docs/images/transport-body.png" width="200"><br><sub>First body (before the bridge)</sub></td>
   </tr>
   <tr>
     <td align="center"><img src="docs/images/transport-bridge-unfolded.jpg" width="200"><br><sub>Bridge unfolded</sub></td>
@@ -87,7 +134,7 @@ A line tracer is too slow to shuttle fruit back and forth reliably, so instead o
 
 - The two side bridges are geared together with **3D-printed half gears** and held closed by one servo. Once released, the half gears disengage and gravity finishes opening the bridges, so the servo only carries load at the start of the motion.
 - The side bridges in turn latch the front rail bridge (about 500–600 g). When they open, a **rubber band** — replacing an earlier pulley-and-counterweight design — swings the rail bridge down. **One servo unfolds every bridge.**
-- Fruit carried on the robot rolls into the refrigerators once the robot is unfolded, collecting the transport bonus.
+- Fruit loaded onto the robot before it unfolds also rolls into the fridges, so the robot still delivers fruit itself.
 
 **Iterations**
 
