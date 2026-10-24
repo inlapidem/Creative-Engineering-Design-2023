@@ -38,8 +38,9 @@ Design a gripper driven by a single SG90 micro servo that picks up a 40 mm cube,
 
 <table>
   <tr>
-    <td align="center"><img src="docs/images/hw1-gripper-final.jpg" width="200"><br><sub>Final gripper</sub></td>
-    <td align="center"><img src="docs/images/hw1-gripper-roller.png" width="200"><br><sub>Comb-finger roller (CAD)</sub></td>
+    <td align="center"><img src="docs/images/hw1-gripper-final.jpg" width="200"><br><sub>mk1 · final gripper (built)</sub></td>
+    <td align="center"><img src="docs/images/hw1-gripper-roller.png" width="200"><br><sub>mk1 · comb-finger roller (CAD)</sub></td>
+    <td align="center"><img src="docs/images/hw1-gripper-mk2.png" width="200"><br><sub>mk2 · geared jaws (alternative design)</sub></td>
   </tr>
 </table>
 
@@ -121,7 +122,7 @@ The transport robot follows the line to the fridges and **transforms into a rail
   <tr>
     <td align="center"><img src="docs/images/transport-final.png" width="200"><br><sub>Final transport robot</sub></td>
     <td align="center"><img src="docs/images/transport-v15.png" width="200"><br><sub>Earlier version (v15)</sub></td>
-    <td align="center"><img src="docs/images/transport-body.png" width="200"><br><sub>First body (before the bridge)</sub></td>
+    <td align="center"><img src="docs/images/transport-body.png" width="200"><br><sub>First body (before the bridge)*</sub></td>
   </tr>
   <tr>
     <td align="center"><img src="docs/images/transport-bridge-unfolded.jpg" width="200"><br><sub>Bridge unfolded</sub></td>
@@ -129,6 +130,8 @@ The transport robot follows the line to the fridges and **transforms into a rail
     <td align="center"><img src="docs/images/transport-circuit.jpg" width="200"><br><sub>Line-tracer circuit</sub></td>
   </tr>
 </table>
+
+<sub>* The drive is left-right symmetric, so only one motor side of the first body was modeled; the same part was laser-cut for both sides.</sub>
 
 **Unfolding mechanism**
 
