@@ -14,7 +14,7 @@ building two cooperating robots that harvest fruit and deliver it to "refrigerat
 
 <img src="docs/images/match.gif" width="560" alt="Competition run: harvest robot and unfolded transport robot">
 
-<sub>Competition run (1.5× speed). The transport robot (bottom right) has unfolded into a rail bridge over the refrigerators.</sub>
+<sub>Competition run (1.5× speed). The harvest robot picks up and lifts a black sapphire grape, while the transport robot (bottom right) has unfolded into a rail bridge over the fridges.</sub>
 
 </div>
 
@@ -34,16 +34,16 @@ Parts were designed in Fusion 360, laser-cut from 3 mm / 4.5 mm MDF and 3D-print
 
 ## HW1 · Servo gripper
 
-Design a gripper driven by a single hobby servo that picks up a 40 mm cube, a Ø45 mm cylinder and a Ø50 mm ball and holds each for three seconds. Two iterations (mk1 / mk2) were modeled; mk2 uses a pair of meshing gears so both jaws close symmetrically from one servo.
+Design a gripper driven by a single SG90 micro servo that picks up a 40 mm cube, a Ø45 mm cylinder and a Ø50 mm ball and holds each for three seconds. The final gripper (mk1) uses two **rotating comb-finger rollers** mounted in a laser-cut MDF frame: the servo turns the rollers through a gear pair so the fingers close on the object from both sides. An earlier geared-jaw concept (mk2) is kept in the CAD folder.
 
 <table>
   <tr>
-    <td align="center"><img src="docs/images/hw1-gripper-mk2.png" width="200"><br><sub>mk2 · geared jaws and linkage arms</sub></td>
-    <td align="center"><img src="docs/images/hw1-gripper-mk2-body.png" width="200"><br><sub>mk2 · gear train on the body</sub></td>
+    <td align="center"><img src="docs/images/hw1-gripper-final.jpg" width="200"><br><sub>Final gripper</sub></td>
+    <td align="center"><img src="docs/images/hw1-gripper-roller.png" width="200"><br><sub>Comb-finger roller (CAD)</sub></td>
   </tr>
 </table>
 
-Files: [`hw1-gripper/`](hw1-gripper/) — CAD for both iterations, the submitted design and laser-cutting drawings (PDF).
+Files: [`hw1-gripper/`](hw1-gripper/) — final parts in [`cad/mk1/`](hw1-gripper/cad/mk1/) (frame, rollers, joints, plates), the earlier mk2 concept and laser-cutting drawings (PDF).
 
 ## HW2 · Line tracer
 
@@ -168,6 +168,10 @@ The robot body is cut from 3 mm MDF (the 4.5 mm stock was reserved for the harve
 - **Control** — each motor maps to an RC transmitter channel; drive speed scales with stick deflection, and the stick is split into forward / back / left / right sectors to avoid conflicting commands.
 
 Files: [`robot-project/`](robot-project/) — transport and harvest robot CAD (`.f3d`), 3D-print files (`.stl`), laser-cut sheets (`.dxf`, PDF) and firmware.
+
+### Team 9
+
+<p align="center"><img src="docs/images/team9.jpg" width="560" alt="Team 9 with the harvest and transport robots"></p>
 
 ### Report
 
