@@ -120,7 +120,7 @@ The transport robot follows the line to the fridges and **transforms into a rail
 
 <table>
   <tr>
-    <td align="center"><img src="docs/images/transport-final.png" width="200"><br><sub>Final transport robot</sub></td>
+    <td align="center"><img src="docs/images/transport-robot-final.png" width="200"><br><sub>Final transport robot*</sub></td>
     <td align="center"><img src="docs/images/transport-v15.png" width="200"><br><sub>Earlier version (v15)</sub></td>
     <td align="center"><img src="docs/images/transport-body.png" width="200"><br><sub>First body (before the bridge)*</sub></td>
   </tr>
@@ -131,7 +131,7 @@ The transport robot follows the line to the fridges and **transforms into a rail
   </tr>
 </table>
 
-<sub>* The drive is left-right symmetric, so only one motor side of the first body was modeled; the same part was laser-cut for both sides.</sub>
+<sub>* Only one side is modeled because the designs are left-right symmetric: the unfolding side bridge on the final robot and the motor mount on the first body. The same parts were laser-cut for both sides.</sub>
 
 **Unfolding mechanism**
 
