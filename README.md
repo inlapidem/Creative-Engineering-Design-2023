@@ -16,8 +16,6 @@ building two cooperating robots that harvest fruit and deliver it to "refrigerat
 
 <sub>Competition run (1.5× speed). The harvest robot picks up and lifts a black sapphire grape, while the transport robot (bottom right) has unfolded into a rail bridge over the fridges.</sub>
 
-▶ **[Watch the full competition run (MP4)](docs/videos/competition-run.mp4)**
-
 </div>
 
 ---
